@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+ <meta charset="UTF-8">
+ <html>
+    <head>
+    </head>
+    <body>
+        <textarea cols="100" rows="10">
+ehxosxangxo cxiujxauxde
+        </textarea>
+        <textarea cols="100" rows="10">
+EHXOSXANGXO CXIUJXAUXDE
+        </textarea>
+        <p>
+        CHAPELIGU CHIUJN LA AFEROJN: <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');for(var i=0;i<tas.length;i+=1){for(var j=0;j<12;j+=1){tas[i].value=tas[i].value.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}}})();">CHAPELIGU CHIUJN LA AFEROJN</a>
+        <p>
+        buttons: <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');var subTxt=function(txt){for(var j=0;j<12;j+=1){txt=txt.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}return txt};var mkBtn=function(ta){var btn=document.createElement('button');btn.innerHTML='\u0109apeligu';btn.onclick=function(){ta.value=subTxt(ta.value)};ta.parentNode.insertBefore(btn,tas[i].nextSibling)};for(var i=0;i<tas.length;i+=1){mkBtn(tas[i])}})();">FARU CHAPELIGAJN BUTONOJN</a>
+
+        <p>
+        Javascript-a fontkodo:
+        <code>
+            <pre>
+function sxangxuCxio() {
+    (function() {
+        var tas = document.getElementsByTagName('textarea');
+        for (var i = 0; i < tas.length; i++) {
+            for (var j = 0; j &lt; 12; j++) {
+                tas[i].value = tas[i].value.replace(new RegExp('hsgcjuHSGCJU'[j] + '[Xx]', 'g') , ['\u0125', '\u015d', '\u011d', '\u0109', '\u0135','\u016d', '\u0124', '\u015c', '\u011c', '\u0108', '\u0134', '\u016c'][j]);
+            }
+        }
+    })();
+}
+function aldonuButonojn() {
+    (function() {
+        var tas = document.getElementsByTagName('textarea');
+        var subTxt = function(txt) {
+            for (var j = 0; j &lt; 12; j += 1) {
+                txt = txt.replace(new RegExp('hsgcjuHSGCJU'[j] + '[Xx]', 'g') , ['\u0125', '\u015d', '\u011d', '\u0109', '\u0135','\u016d', '\u0124', '\u015c', '\u011c', '\u0108', '\u0134', '\u016c'][j]);
+            }
+            return txt;
+        }
+        var mkBtn = function(ta) {
+            var btn = document.createElement('button')
+            btn.innerHTML = '\u0109apeligu';
+            btn.onclick = function() { ta.value = subTxt(ta.value); };
+            ta.parentNode.insertBefore(btn,tas[i].nextSibling);
+        }
+        for (var i = 0; i &lt; tas.length; i++) {
+            mkBtn(tas[i]);
+        }
+    })();
+}
+
+        </pre>
+        </code>
+    </body>
+</html>
