@@ -2,21 +2,42 @@
  <meta charset="UTF-8">
  <html>
     <head>
+    <title>Ligiletoj (Bookmarklets) por Eaperanto</title>
     </head>
-    <body>
+    <body> 
+        <h1>Ligiletoj (Bookmarklets) por Eaperanto</h1>
+        <h2>Explanation - Klarigo</h2>
+        <p>Explanation in English -- Esperanto conversion to come when I have time</p>
+        <p>What are "bookmarklets"? They're bookmarks which contain a bit of Javascript code instead of a URL. When you select one from your browser's bookmark bar or bookmark menu, you don't go to a new page, instead you run some code which may affect your current page.  They're simpler and easier to install and use than browser extensions.</p>
+        <p>These particular extensions I made for times when I wanted to write something into a text box on the web, wanted to write some Esperanto, but didn't have the time or inclination to use a proper keyboard.  These let you type using the x-system, and then activate a bookmarklet, to help you change the text.</p>
+        <p>I have two bookmarklets here, one called "CHAPELIGU CHIUJN LA AFEROJN" ("PUT HATS ON ALL THE THINGS"), which will look for every textarea on the page and hat-ify the x-system letters in any of them.  The other one, "Kreu chapeligajn butonojn" ("create hat-ifying buttons") will put a button next to each text box.  If you click the button, then the x-system letters in that box will receive hats.
+        </p>
+        <p>On desktop browsers it is usually possible to just drag the links off the page and onto your bookmarks bar; on mobile browsers the process may be more difficult. You can consult a search engine for information on how to do it; <a href="https://www.howtogeek.com/189358/beginner-geek-how-to-use-bookmarklets-on-any-device/">here's</a> a good starting place.
+        </p>
+        <h2>The Bookmarklets - Jen La Ligiletoj</h2>
+        <p>
+        To install, grab them with your mouse pointer and drag them to your bookmarks bar.
+        </p>
+        <p>
+        <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');var subTxt=function(txt){for(var j=0;j<12;j+=1){txt=txt.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}return txt};var mkBtn=function(ta){var btn=document.createElement('button');btn.innerHTML='\u0109apeligu';btn.onclick=function(){ta.value=subTxt(ta.value)};ta.parentNode.insertBefore(btn,tas[i].nextSibling)};for(var i=0;i<tas.length;i+=1){mkBtn(tas[i])}})();">Kreu chapeligajn butonojn</a>
+</p>
+<p>
+        <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');for(var i=0;i<tas.length;i+=1){for(var j=0;j<12;j+=1){tas[i].value=tas[i].value.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}}})();">CHAPELIGU CHIUJN LA AFEROJN</a>
+</p>
+        <h2>Text Boxes to try the bookmarklets on - Tekstskatoloj por provi la ligiletojn</h2>
+        <p>
+        Bookmarklets also work if they're embedded on a page!  You can click the bookmarklets on this page and watch waht they do to these text boxes.
+        </p>
         <textarea cols="100" rows="10">
 ehxosxangxo cxiujxauxde
         </textarea>
         <textarea cols="100" rows="10">
 EHXOSXANGXO CXIUJXAUXDE
         </textarea>
-        <p>
-        CHAPELIGU CHIUJN LA AFEROJN: <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');for(var i=0;i<tas.length;i+=1){for(var j=0;j<12;j+=1){tas[i].value=tas[i].value.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}}})();">CHAPELIGU CHIUJN LA AFEROJN</a>
-        <p>
-        buttons: <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');var subTxt=function(txt){for(var j=0;j<12;j+=1){txt=txt.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}return txt};var mkBtn=function(ta){var btn=document.createElement('button');btn.innerHTML='\u0109apeligu';btn.onclick=function(){ta.value=subTxt(ta.value)};ta.parentNode.insertBefore(btn,tas[i].nextSibling)};for(var i=0;i<tas.length;i+=1){mkBtn(tas[i])}})();">FARU CHAPELIGAJN BUTONOJN</a>
 
+<h2>Javascript Source Code - Javascript-a fontkodo</h2>
         <p>
-        Javascript-a fontkodo:
+    This is (more or less) the javascript included in the above bookmarklets.  It's squished together in the bookmarklets so it will fit inside a link.  But this is what it does, if you're curious.
         <code>
             <pre>
 function sxangxuCxio() {
