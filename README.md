@@ -1,2 +1,2 @@
 # eo-ligiletoj
-Ligiletaj ("bookmarklets") por cxapeligi literojn en tekstaj skatoloj
+Ligiletaj ("bookmarklets") por ĉapeligi literojn en tekstaj skatoloj
