@@ -2,12 +2,12 @@
  <meta charset="UTF-8">
  <html>
     <head>
-    <title>Ligiletoj (Bookmarklets) por Eaperanto</title>
+    <title>Ligiletoj (Bookmarklets) por Esperanto</title>
     </head>
     <body> 
-        <h1>Ligiletoj (Bookmarklets) por Eaperanto</h1>
+        <h1>Ligiletoj (Bookmarklets) por Esperanto</h1>
         <h2>Explanation - Klarigo</h2>
-        <p>Explanation in English -- Esperanto conversion to come when I have time</p>
+        <p>Explanation in English -- Esperanto explanation to come later when I have time.  I am throwing this page together extremely quickly in order to share it tonight; please excuse the no doubt numerous typoes.</p>
         <p>What are "bookmarklets"? They're bookmarks which contain a bit of Javascript code instead of a URL. When you select one from your browser's bookmark bar or bookmark menu, you don't go to a new page, instead you run some code which may affect your current page.  They're simpler and easier to install and use than browser extensions.</p>
         <p>These particular extensions I made for times when I wanted to write something into a text box on the web, wanted to write some Esperanto, but didn't have the time or inclination to use a proper keyboard.  These let you type using the x-system, and then activate a bookmarklet, to help you change the text.</p>
         <p>I have two bookmarklets here, one called "CHAPELIGU CHIUJN LA AFEROJN" ("PUT HATS ON ALL THE THINGS"), which will look for every textarea on the page and hat-ify the x-system letters in any of them.  The other one, "Kreu chapeligajn butonojn" ("create hat-ifying buttons") will put a button next to each text box.  If you click the button, then the x-system letters in that box will receive hats.
@@ -37,7 +37,24 @@ EHXOSXANGXO CXIUJXAUXDE
 
 <h2>Javascript Source Code - Javascript-a fontkodo</h2>
         <p>
-    This is (more or less) the javascript included in the above bookmarklets.  It's squished together in the bookmarklets so it will fit inside a link.  But this is what it does, if you're curious.
+    This is the javascript included in the above bookmarklets.  To install them on iOS there may be some annoying cutting and pasting required...
+    </p>
+    <p>
+    por krei butonojn:
+    </p>
+    <p>
+    <code>javascript:(function(){var tas=document.getElementsByTagName('textarea');var subTxt=function(txt){for(var j=0;j&lt;12;j+=1){txt=txt.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}return txt};var mkBtn=function(ta){var btn=document.createElement('button');btn.innerHTML='\u0109apeligu';btn.onclick=function(){ta.value=subTxt(ta.value)};ta.parentNode.insertBefore(btn,tas[i].nextSibling)};for(var i=0;i&lt;tas.length;i+=1){mkBtn(tas[i])}})();</code>
+    </p>
+    <p> por chapeligi chiajn aferojn:
+    </p>
+    <p>
+    <code>
+    javascript:(function(){var tas=document.getElementsByTagName('textarea');for(var i=0;i&lt;tas.length;i+=1){for(var j=0;j&lt;12;j+=1){tas[i].value=tas[i].value.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}}})();
+    </code>
+    </p>
+    <p>
+    This is a non-minified, readable version (not usable in a bookmarklet):
+
         <code>
             <pre>
 function sxangxuCxio() {
