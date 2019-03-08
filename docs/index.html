@@ -1,62 +1,98 @@
- <!DOCTYPE html>
- <meta charset="UTF-8">
- <html>
-    <head>
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+  <head>
     <title>Ligiletoj (Bookmarklets) por Esperanto</title>
-    </head>
-    <body> 
-        <h1>Ligiletoj (Bookmarklets) por Esperanto</h1>
-        <h2>Explanation - Klarigo</h2>
-        <p>Explanation in English -- Esperanto explanation to come later when I have time.  I am throwing this page together extremely quickly in order to share it tonight; please excuse the no doubt numerous typoes.</p>
-        <p>What are "bookmarklets"? They're bookmarks which contain a bit of Javascript code instead of a URL. When you select one from your browser's bookmark bar or bookmark menu, you don't go to a new page, instead you run some code which may affect your current page.  They're simpler and easier to install and use than browser extensions.</p>
-        <p>These particular extensions I made for times when I wanted to write something into a text box on the web, wanted to write some Esperanto, but didn't have the time or inclination to use a proper keyboard.  These let you type using the x-system, and then activate a bookmarklet, to help you change the text.</p>
-        <p>I have two bookmarklets here, one called "CHAPELIGU CHIUJN LA AFEROJN" ("PUT HATS ON ALL THE THINGS"), which will look for every textarea on the page and hat-ify the x-system letters in any of them.  The other one, "Kreu chapeligajn butonojn" ("create hat-ifying buttons") will put a button next to each text box.  If you click the button, then the x-system letters in that box will receive hats.
-        </p>
-        <p>On desktop browsers it is usually possible to just drag the links off the page and onto your bookmarks bar; on mobile browsers the process may be more difficult. You can consult a search engine for information on how to do it; <a href="https://www.howtogeek.com/189358/beginner-geek-how-to-use-bookmarklets-on-any-device/">here's</a> a good starting place.
-        </p>
-        <h2>The Bookmarklets - Jen La Ligiletoj</h2>
-        <p>
-        To install, grab them with your mouse pointer and drag them to your bookmarks bar.
-        </p>
-        <p>
-        <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');var subTxt=function(txt){for(var j=0;j<12;j+=1){txt=txt.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}return txt};var mkBtn=function(ta){var btn=document.createElement('button');btn.innerHTML='\u0109apeligu';btn.onclick=function(){ta.value=subTxt(ta.value)};ta.parentNode.insertBefore(btn,tas[i].nextSibling)};for(var i=0;i<tas.length;i+=1){mkBtn(tas[i])}})();">Kreu chapeligajn butonojn</a>
-</p>
-<p>
-        <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');for(var i=0;i<tas.length;i+=1){for(var j=0;j<12;j+=1){tas[i].value=tas[i].value.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}}})();">CHAPELIGU CHIUJN LA AFEROJN</a>
-</p>
-        <h2>Text Boxes to try the bookmarklets on - Tekstskatoloj por provi la ligiletojn</h2>
-        <p>
-        Bookmarklets also work if they're embedded on a page!  You can click the bookmarklets on this page and watch waht they do to these text boxes.
-        </p>
-        <textarea cols="100" rows="10">
-ehxosxangxo cxiujxauxde
-        </textarea>
-        <textarea cols="100" rows="10">
-EHXOSXANGXO CXIUJXAUXDE
-        </textarea>
+    <style>
+     body{
+       margin:40px auto;
+       max-width:650px;
+       line-height:1.6;
+       font-size:18px;
+       color:#444;
+       padding:0 10px
+     }
+     h1,h2,h3{line-height:1.2}
+     .en { background-color: #F7F7F7; }
+     .eo { background-color: #EEFFEE; }
+    </style>
+  </head>
+  <body> 
+    <h1 class="eo">
+      Ligiletoj <span class="en">(Bookmarklets)</span> por Esperanto
+    </h1>
+    <h2 class="eo">
+      Klarigo - <span class="en">Explanation</span>
+    </h2>
+    <p class="eo">
+      Kion signifas "ligiletoj?"  (Mi kreis tion vorton por traduki "bookmarklet," kvankam eble "legosigneto" estus pli tauxga.) Ili estas ligilaj konservitaj kiel legosignoj en onia retumilo, kiuj enhavas pecon de Javascript-kodo anstataux URL.  Kiam oni elektas unu el ili el la legosigna ilobreto aux legosigna menuo, oni ne eliras al nova pagxo, sed rulas ian kodon kiu povas regi/shxangxi la nunan pagxon.  Ili estas pli simplaj, kaj pli facilaj instali kaj uzi, ol retumilaj aldonagxoj.
+    </p>
+    <p class="en">
+      What are "bookmarklets"? They're bookmarks which contain a bit of Javascript code instead of a URL. When you select one from your browser's bookmark bar or bookmark menu, you don't go to a new page, instead you run some code which may affect your current page.  They're simpler and easier to install and use than browser extensions.
+    </p>
+    <p class="eo">
+      Tiujn apartajn ligiletojn kreis mi por okazoj, kiam mi volas skribi ion Esperante en tekstoskatolo en retpagxo, sed ne havas suficxe da tempo aux volo uzi gxustan klavaron.  Ili eblas al vi tajpi uzante la ikso-sistemon, kaj poste aktivigi iun ligileton, por helpi al vi sxangxi tekston.
+    </p>
+    <p class="en" >
+      These particular bookmarklets I made for times when I wanted to write something in Esperanto in a text box on the web, wanted to write some Esperanto, but didn't have the time or inclination to use a proper keyboard.  These let you type using the x-system, and then activate a bookmarklet, to help you change the text.
+    </p>
+    <p class="eo" >
+      Jen du ligiletoj, unu nomita "ĈAPELIGU ĈIUJN LA AFEROJN", kiu serĉos ĉiun tekstoskatolon en la paĝo kaj ĉapeligos iujn ajn iks-sistemajn literojn tie. La alia, nomita "kreu ĉapeligajn butonojn", kreis butonojn apud cxiu tekstoskatolo.  Se oni premas butonon, la teksto en nur la apuda tekstoskatolo ŝanĝiĝas el la ikso-sistemo al ĉapelitaj literoj.
+    </p>
+    <p class="en" >
+      I have two bookmarklets here, one called <span class="eo">CXAPELIGU CXIUJN LA AFEROJN"</span> ("PUT HATS ON ALL THE THINGS"), which will look for every textarea on the page and hat-ify the x-system letters in any of them.  The other one, <span class="eo">kreu chapeligajn butonojn"</span> ("create hat-ifying buttons") will put a button next to each text box.  If you click the button, then the x-system letters in that box will receive hats.
+    </p>
+    <p class="eo" >
+      En labortablaj retumiloj, oni kutime povas simple tiri la ligilojn el la pagxo kaj sur la legosignan ilobreton; en posxtelefonaj retumiloj eblas ke aferoj estos pli komplikaj. Oni povus sercxi rete por rimedoj pri tiu eblo; jen <a href="https://www.howtogeek.com/189358/beginner-geek-how-to-use-bookmarklets-on-any-device/">ekzempla artikolo.</a>
+    </p>
+    <p class="en">
+      On desktop browsers it is usually possible to just drag the links off the page and onto your bookmarks bar; on mobile browsers the process may be more difficult. You can consult a search engine for information on how to do it; for example, see <a href="https://www.howtogeek.com/189358/beginner-geek-how-to-use-bookmarklets-on-any-device/">this article.</a>
+    </p>
+    <hr>
 
-<h2>Javascript Source Code - Javascript-a fontkodo</h2>
-        <p>
-    This is the javascript included in the above bookmarklets.  To install them on iOS there may be some annoying cutting and pasting required...
+    <h2>The Bookmarklets - Jen La Ligiletoj</h2>
+    <p>
+      To install, grab them with your mouse pointer and drag them to your bookmarks bar.
     </p>
     <p>
-    por krei butonojn:
+      <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');var subTxt=function(txt){for(var j=0;j<12;j+=1){txt=txt.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}return txt};var mkBtn=function(ta){var btn=document.createElement('button');btn.innerHTML='\u0109apeligu';btn.onclick=function(){ta.value=subTxt(ta.value)};ta.parentNode.insertBefore(btn,tas[i].nextSibling)};for(var i=0;i<tas.length;i+=1){mkBtn(tas[i])}})();">kreu chapeligajn butonojn</a>
     </p>
     <p>
-    <code>javascript:(function(){var tas=document.getElementsByTagName('textarea');var subTxt=function(txt){for(var j=0;j&lt;12;j+=1){txt=txt.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}return txt};var mkBtn=function(ta){var btn=document.createElement('button');btn.innerHTML='\u0109apeligu';btn.onclick=function(){ta.value=subTxt(ta.value)};ta.parentNode.insertBefore(btn,tas[i].nextSibling)};for(var i=0;i&lt;tas.length;i+=1){mkBtn(tas[i])}})();</code>
+      <a href="javascript:(function(){var tas=document.getElementsByTagName('textarea');for(var i=0;i<tas.length;i+=1){for(var j=0;j<12;j+=1){tas[i].value=tas[i].value.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}}})();">CHAPELIGU CHIUJN LA AFEROJN</a>
+    </p>
+    <h2>Text Boxes to try the bookmarklets on - Tekstoskatoloj por provi la ligiletojn</h2>
+    <p>
+      Bookmarklets also work if they're embedded on a page!  You can click the bookmarklets on this page and watch waht they do to these text boxes.
+    </p>
+    <textarea cols="100" rows="10">
+ehxosxangxo cxiujxauxde
+    </textarea>
+    <textarea cols="100" rows="10">
+EHXOSXANGXO CXIUJXAUXDE
+    </textarea>
+
+    <h2>Javascript Source Code - Javascript-a fontkodo</h2>
+    <p>
+      This is the javascript included in the above bookmarklets.  To install them on iOS there may be some annoying cutting and pasting required...
+    </p>
+    <p>
+      por krei butonojn:
+    </p>
+    <p>
+      <code>javascript:(function(){var tas=document.getElementsByTagName('textarea');var subTxt=function(txt){for(var j=0;j&lt;12;j+=1){txt=txt.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}return txt};var mkBtn=function(ta){var btn=document.createElement('button');btn.innerHTML='\u0109apeligu';btn.onclick=function(){ta.value=subTxt(ta.value)};ta.parentNode.insertBefore(btn,tas[i].nextSibling)};for(var i=0;i&lt;tas.length;i+=1){mkBtn(tas[i])}})();</code>
     </p>
     <p> por chapeligi chiajn aferojn:
     </p>
     <p>
-    <code>
+      <code>
     javascript:(function(){var tas=document.getElementsByTagName('textarea');for(var i=0;i&lt;tas.length;i+=1){for(var j=0;j&lt;12;j+=1){tas[i].value=tas[i].value.replace(new RegExp('hsgcjuHSGCJU'[j]+'[Xx]','g'),['\u0125','\u015d','\u011d','\u0109','\u0135','\u016d','\u0124','\u015c','\u011c','\u0108','\u0134','\u016c'][j])}}})();
-    </code>
+      </code>
     </p>
     <p>
-    This is a non-minified, readable version (not usable in a bookmarklet):
+      This is a non-minified, readable version (not usable in a bookmarklet):
 
-        <code>
-            <pre>
+      <code>
+        <pre>
 function sxangxuCxio() {
     (function() {
         var tas = document.getElementsByTagName('textarea');
@@ -89,6 +125,6 @@ function aldonuButonojn() {
 }
 
         </pre>
-        </code>
-    </body>
+      </code>
+  </body>
 </html>
